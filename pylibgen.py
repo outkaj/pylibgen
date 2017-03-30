@@ -8,7 +8,6 @@ from urllib.parse import quote_plus
 # Mirrors may change over time as they get taken down.
 # These two work at the time of development.
 MIRRORS = [
-    'libgen.io',
     'gen.lib.rus.ec',
 ]
 
@@ -37,7 +36,7 @@ def lookup(mirror, ids, fields=[
     '''Returns a list of JSON dicts each containing metadata field
     values for each libgen book ID. Uses the unofficial libgen query
     API to retrieve this information.
-    
+
     The default fields are probably enough, but there are a LOT
     more like openlibraryid, publisher, etc. To get all fields,
     use fields=['*'].
@@ -66,12 +65,12 @@ def get_download_url(mirror, md5, enable_ads=False):
 
 def download(mirror, md5, dest='.', use_browser=False):
     '''Downloads a book given its libgen MD5 hash to the destination directory.
-    
+
     Libgen seems to delay programmatically sent dl requests, even if the UA
-    string is spoofed and the URL contains a good key, so I recommend just 
+    string is spoofed and the URL contains a good key, so I recommend just
     using get_download_url. Alternatively, you can set use_browser=True, which
     will just open up the download URL in a new browser tab.
-    
+
     Note that if you spam download requests, libgen will temporarily 503.
     Again, I recommend using get_download_url and downloading from the browser.
     '''

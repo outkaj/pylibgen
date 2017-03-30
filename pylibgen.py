@@ -8,6 +8,7 @@ from urllib.parse import quote_plus
 # Mirrors may change over time as they get taken down.
 # These two work at the time of development.
 MIRRORS = [
+    #'libgen.io',
     'gen.lib.rus.ec',
 ]
 
